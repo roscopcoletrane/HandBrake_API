@@ -14,6 +14,7 @@ namespace HandBrake_API
 		public string path { get; private set; }
 
 		public string mainFeatureTitleNumber { get; private set; }
+		public int mainFeatureTitleIndex { get; private set; }
 
 		public List<Title> titleList;
 		public List<Job> jobList;
@@ -107,6 +108,7 @@ namespace HandBrake_API
 				{
 					string mfLine = gatherDump[gatherDump.IndexOf(line) - 1];
 					mainFeatureTitleNumber = System.Text.RegularExpressions.Regex.Match(mfLine, "\\+ title (?<number>[0-9]+):").Groups["number"].Value;
+					mainFeatureTitleIndex = indexList.Count - 1;
 				}
 			}
 
