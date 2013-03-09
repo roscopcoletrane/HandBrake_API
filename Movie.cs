@@ -153,7 +153,6 @@ namespace HandBrake_API
 
 		public void AddNewJob(List<Arg> argList)
 		{
-			argList.Add(new Arg("-i", "\"" + path + name + "\""));
 			jobList.Add(new Job(argList));
 		}
 
